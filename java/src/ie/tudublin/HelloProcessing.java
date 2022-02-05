@@ -11,10 +11,10 @@ public class HelloProcessing extends PApplet
 	}
 
 	public void setup() {
-		colorMode(HSB);
-		background(0);
+		colorMode(RGB);
+		//background(0);
 
-		x1 = random(0, width);
+		/*x1 = random(0, width);
 		x2 = random(0, width);
 		y1 = random(0, height);
 		y2 = random(0, height);
@@ -26,17 +26,44 @@ public class HelloProcessing extends PApplet
 		y1dir = random(-range, range);
 		y2dir = random(-range, range);
 
-		smooth();
+		smooth();*/
 		
 	}
 
-	float x1, y1, x2, y2;
+	/*float x1, y1, x2, y2;
 	float x1dir, x2dir, y1dir, y2dir;
-	float c = 0;
+	float c = 0;*/
 	
 	public void draw()
 	{	
-		strokeWeight(2);
+		//stroke(255);
+		background(255,0,0);
+		//line(10,10,200,200);//x1,y1,x2,y2
+		//circle(250,250,400);//xc,yc,r
+		//ellipse(50,200,90,200);//cx,cy,w,h
+
+		stroke(0);
+		fill(255,255,0);
+		circle(250,250,350);
+		noFill();
+		noStroke();
+		//rectMode(CENTER);
+		//rect(300, 20, 100, 20);//tlx,tly,w,h
+
+		//rectMode(CORNER);
+		//rect(200,20,100,20);//tlx,tly,w,h
+
+		//point(20,300);
+		fill(137,207,240);
+		triangle(50, 400, 250, 30, 445, 400);//x1,y1,x2,y2,x3,y3#
+		noFill();
+		fill(244,194,194);
+		ellipse(250,250,200,90);
+
+		fill(0);
+		circle(250,250,70);
+		noFill();
+		/*strokeWeight(2);
 		stroke(c, 255, 255);
 		c = (c + 1f) % 255;
 		line(x1, y1, x2, y2);
@@ -62,6 +89,6 @@ public class HelloProcessing extends PApplet
 		if (y2 < 0 || y2 > height)
 		{
 			y2dir = - y2dir;
-		}
+		}*/
 	}
 }
