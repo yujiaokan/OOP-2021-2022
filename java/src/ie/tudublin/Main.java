@@ -20,7 +20,7 @@ public class Main
         processing.core.PApplet.runSketch( a, new Loops());
     }
 
-    public void cat()
+    public static void cat()
     {
         System.out.println("Hello world");
 
@@ -45,9 +45,9 @@ public class Main
     }
     public static void main(String[] args)
     {
-        loops();
+        //loops();
         //bugZap();
-
+        //cat();
         // Tara Misty
         // Tara Tara
         
