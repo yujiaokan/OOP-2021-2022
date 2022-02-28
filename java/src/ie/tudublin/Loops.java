@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class Loops extends PApplet
 {
 
-	int mode =0;
+	int mode =5;
 	public void settings()
 	{
 		size(500, 500);
@@ -45,6 +45,7 @@ public class Loops extends PApplet
 
 		return d+((howFar/r1)*r2);
 	}*/
+	float offset =0;
 	public void draw()
 	{	
 		switch(mode)
@@ -58,13 +59,142 @@ public class Loops extends PApplet
 				for(int i=0;i<bars;i++)
 				{
 					noStroke();
-					rect(map(i,0,bars,0,500), 0, w, height);
 					fill(map(i,0,bars,0,255),255,255);
+					rect(map(i,0,bars,0,500), 0, w, height);
+					
 
 				}
 				break;
 
-				
+			case 1:
+
+				//map(2,10,90,200,233);
+				//r1=c-b r2=e-d (a-b/r1)*r2+d
+				background(0);
+				int b=mouseX / 20;
+				float h=width / (float)b;
+				//float h=height / (float)b;
+
+				for(int i=0;i<b;i++)
+				{
+					noStroke();
+					fill(map(i,0,b,0,255),255,255);
+					float x=map(i,0,b,0,width);
+					rect(x,x,h,h);
+					rect((width-h)-x,x,h,h);
+					
+
+				}
+				break;
+			case 2:
+			{
+				background(255);
+				//int c=mouseX / 20;
+				//float d=width / (float)c;
+				int circle=(int)(mouseX/20.0f);
+				offset += (mouseY/100.0f);
+				float d= width/(float) circle;
+				//float colorGap=255/(float) bars;
+				/*for(int i=0;i<c;i++)
+				{
+					noStroke();
+					fill(map(i,0,c,0,255),255,255);
+					//ellipse(map(i,0,c-1,d/2,width-(d/2)), 30, d, d);
+					
+					circle(map(i,0,c-1,d/2,width-(d/2)), 30, d);
+					
+					
+					
+					
+
+				}*/
+			
+				for (int j =0;j<circle;j++)
+				{
+					for(int i=0; i<circle;i++)
+					{
+						noStroke();
+						float c = map(i+j, 0, circle*2, 0, 255);
+						fill(c,255,255);
+						float x =map(i,0,circle-1,d/2.0f,width-(d/2.0f));
+						float y =map(j,0,circle-1,d/2.0f,width-(d/2.0f));
+						circle(x, y, d);
+					}
+				}
+			}
+				break;
+			case 3:
+			{
+			    background(255);
+				int c=mouseX / 20;
+				float d=width / (float)c;
+				//float colorGap=255/(float) bars;
+				for(int i=0;i<c;i++)
+				{
+					noStroke();
+					fill(map(i,0,c,0,255),255,255);
+					ellipse(map(i,0,c-1,d/2,width-(d/2)), 30, d, d);
+					
+					circle(map(i,0,c-1,d/2,width-(d/2)), 30, d);
+					
+					
+					
+					
+
+				}
+			}
+				break;
+
+			case 4:
+			{
+				background(0);
+				colorMode(RGB);
+				float border = width * 0.1f;
+				for (int i = -5; i<=5;i++)
+				{
+					float x = map(i,-5,5,border,width - border);
+					stroke(0,255,0);
+					line(x,border,x,height-border);
+					line(border,x,width-border,x);
+					fill(255);
+					text(i,x,border * 0.5f);
+					text(i, border * 0.5f,x);
+				}
+			}
+
+			break;
+
+			case 5:
+			{
+				background(0);
+				colorMode(RGB);
+				stroke(255);
+				float cx = width/2;
+				float cy= height/2;
+				float radius = 200;
+				int sides = (int) map(mouseX,1,width,2,10);
+				for (int i = 1; i <= sides;i++)
+				{
+					float theta1 =map(i-1,0,sides,0, TWO_PI);
+					float x1 =cx + cos(theta1) * radius;
+					float y1 = cy + sin(theta1) * radius;
+
+					float theta2 =map(i,0,sides,0, TWO_PI);
+					float x2 =cx + cos(theta2) * radius;
+					float y2 = cy + sin(theta2) * radius;
+
+					line(x1, y1, x2, y2);
+					//line(x1, y1, z1, x2, y2, z2);
+					
+
+				}
+
+
+			}
+			break;
+
+			
+			
 
 		}
 		

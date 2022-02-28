@@ -19,6 +19,22 @@ public class Main
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new Loops());
     }
+    public static void loops2()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Loops2());
+    }
+
+    public static void life()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new life());
+    }
+    public static void arrays()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Arrays());
+    }
 
     public static void cat()
     {
@@ -44,7 +60,10 @@ public class Main
 
     }
     public static void main(String[] args)
-    {
+    {   
+        life();
+        //loops2();
+        //arrays();
         //loops();
         //bugZap();
         //cat();
