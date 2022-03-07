@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+
+
 public class Main
 {
     public static void helloProcessing()
@@ -23,6 +25,19 @@ public class Main
 	{
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new Loops());
+    }
+
+    public static void arrays()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Arrays());
+    }
+
+
+    public static void audio1()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Audio1());
     }
 
     public void cat()
@@ -50,8 +65,11 @@ public class Main
     }
     public static void main(String[] args)
     {
+<<<<<<< HEAD
         //loops();
         //bugZap();
+=======
+>>>>>>> 772b7e7a2fcfc11288302b620ad2aa76ac11efc0
         audio1();
 
         // Tara Misty
