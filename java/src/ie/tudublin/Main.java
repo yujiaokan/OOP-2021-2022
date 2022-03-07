@@ -15,11 +15,6 @@ public class Main
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new BugZap());
     }
-    public static void audio1()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Audio1());
-    }
 
     public static void loops()
 	{
@@ -65,11 +60,8 @@ public class Main
     }
     public static void main(String[] args)
     {
-<<<<<<< HEAD
         //loops();
         //bugZap();
-=======
->>>>>>> 772b7e7a2fcfc11288302b620ad2aa76ac11efc0
         audio1();
 
         // Tara Misty
